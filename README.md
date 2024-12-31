@@ -1,2 +1,0 @@
-# Efox
-Toolbox for OffSec
