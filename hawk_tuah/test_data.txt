@@ -1,0 +1,10 @@
+line of sta only paired device (sta-only)
+84:01:12:99:F1:3A  24:18:C6:DC:64:77  -68    0 - 1     19     1067         Dont3ven
+
+list router to get channel
+84:01:12:99:F1:3A  -23      211       17    0   6  130   WPA2 CCMP   PSK  Dont3ven
+
+
+todo --
+after closing second pop-up window, it dissapear - unable to copy the result
+failing in the end on exceptionw

