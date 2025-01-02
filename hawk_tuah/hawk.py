@@ -43,20 +43,23 @@ def main(config_param):
             os.system(user_input)
 
         elif user_input.lower() == 'monitor':
-            get_interface(config_param)
-            start_monitoring_mode()
+            if get_interface(config_param):
+                start_monitoring_mode()
 
         elif user_input.lower() == 'craft':
-            get_data()
-            print_data(config_param)
-            prepare_output_folder(config_param)
+            if target.interface:
+                get_data()
+                print_data(config_param)
+                prepare_output_folder(config_param)
+            else:
+                print('\nError: interface not found\n# run \'monitor\' command first\n')
 
         elif user_input.lower() == 'start':
-            get_interface(config_param)
-            start_monitoring_mode()
-            get_data()
-            print_data(config_param)
-            prepare_output_folder(config_param)
+            if get_interface(config_param):
+                start_monitoring_mode()
+                get_data()
+                print_data(config_param)
+                prepare_output_folder(config_param)
 
 def get_interface(config_param):
     print(f'\nSearching for {config_param.get('ap_dongle')} ...')
@@ -65,6 +68,10 @@ def get_interface(config_param):
     lines=result.split('\n')
 
     adapters_info=[line for line in lines if config_param.get('ap_dongle') in line]
+
+    if not adapters_info:
+        print(f'Error: not found dongle {config_param.get('ap_dongle')}\n# check dongle, drivers and VM settings\n')
+        return 0
 
     target.interface = adapters_info[0].split()[1]
     print(f'Success! Found interface: {target.interface}')
