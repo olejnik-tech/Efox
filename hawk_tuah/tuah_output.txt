@@ -1,0 +1,138 @@
+Status...........: Exhausted
+Guess.Base.......: File (/home/kali/VirtualShared/Wordlists/001_cracked.txt.gz)
+Status...........: Exhausted
+Guess.Base.......: File (/home/kali/VirtualShared/Wordlists/002_rockyou.zip)
+Status...........: Exhausted
+Guess.Base.......: File (/home/kali/VirtualShared/Wordlists/003_probable_wpa.txt)
+Status...........: Exhausted
+Guess.Base.......: File (/home/kali/VirtualShared/Wordlists/004_czech.txt)
+Status...........: Exhausted
+Guess.Base.......: File (/home/kali/VirtualShared/Wordlists/005_most_used_passwords.txt)
+Status...........: Exhausted
+Guess.Base.......: File (/home/kali/VirtualShared/Wordlists/006_bt4_passwords.txt)
+Status...........: Exhausted
+Guess.Base.......: File (/home/kali/VirtualShared/Wordlists/007_names.txt)
+Status...........: Exhausted
+Guess.Base.......: File (/home/kali/VirtualShared/Wordlists/008_facebook_phished.txt)
+Status...........: Exhausted
+Guess.Base.......: File (/home/kali/VirtualShared/Wordlists/008_hotmail.txt)
+Status...........: Exhausted
+Guess.Base.......: File (/home/kali/VirtualShared/Wordlists/009_hugedb.txt)
+Status...........: Exhausted
+Guess.Base.......: File (/home/kali/VirtualShared/Wordlists/010_Words.txt)
+Status...........: Exhausted
+Guess.Base.......: File (/home/kali/VirtualShared/Wordlists/011_davajj_ultimate_wordlist.txt)
+Status...........: Exhausted
+Guess.Base.......: File (/home/kali/VirtualShared/Wordlists/012_argon-outher.txt)
+Status...........: Exhausted
+Guess.Base.......: File (/home/kali/VirtualShared/Wordlists/013_english.txt)
+Status...........: Running
+Guess.Base.......: File (/home/kali/VirtualShared/Wordlists/014_oCustom-WPA.txt)
+Status...........: Exhausted
+Guess.Base.......: File (/home/kali/VirtualShared/Wordlists/014_oCustom-WPA.txt)
+Status...........: Exhausted
+Guess.Base.......: File (/home/kali/VirtualShared/Wordlists/015_Some_passw_12.txt)
+Status...........: Exhausted
+Guess.Base.......: File (/home/kali/VirtualShared/Wordlists/016_Some_passw_18.txt)
+Status...........: Exhausted
+Guess.Base.......: File (/home/kali/VirtualShared/Wordlists/017_Some_passw_21.txt)
+Status...........: Exhausted
+Guess.Base.......: File (/home/kali/VirtualShared/Wordlists/018_Some_passw_23.txt)
+Status...........: Exhausted
+Guess.Base.......: File (/home/kali/VirtualShared/Wordlists/019_Some_passw_24.txt)
+Status...........: Exhausted
+Guess.Base.......: File (/home/kali/VirtualShared/Wordlists/020_Some_passw_25.txt)
+Status...........: Exhausted
+Guess.Base.......: File (/home/kali/VirtualShared/Wordlists/021_Some_passw_26.txt)
+Status...........: Exhausted
+Guess.Base.......: File (/home/kali/VirtualShared/Wordlists/022_Some_passw_27.txt)
+Status...........: Exhausted
+Guess.Base.......: File (/home/kali/VirtualShared/Wordlists/023_Some_passw_28.txt)
+Status...........: Exhausted
+Guess.Base.......: File (/home/kali/VirtualShared/Wordlists/024_wordlist.txt)
+Status...........: Running
+Guess.Base.......: File (/home/kali/VirtualShared/Wordlists/025_word.txt)
+Status...........: Exhausted
+Guess.Base.......: File (/home/kali/VirtualShared/Wordlists/025_word.txt)
+Status...........: Exhausted
+Guess.Base.......: File (/home/kali/VirtualShared/Wordlists/026_wpa.txt)
+Status...........: Exhausted
+Guess.Base.......: File (/home/kali/VirtualShared/Wordlists/027_Words.txt)
+Status...........: Exhausted
+Guess.Base.......: File (/home/kali/VirtualShared/Wordlists/028_words.czech.txt)
+Status...........: Exhausted
+Guess.Base.......: File (/home/kali/VirtualShared/Wordlists/029_wordlist-final.txt)
+Status...........: Exhausted
+Guess.Base.......: File (/home/kali/VirtualShared/Wordlists/030_passwordlist.txt)
+Status...........: Exhausted
+Guess.Base.......: File (/home/kali/VirtualShared/Wordlists/031_PASSWORD_WORDLIST.txt)
+Status...........: Exhausted
+Guess.Base.......: File (/home/kali/VirtualShared/Wordlists/032_names.txt)
+Status...........: Exhausted
+Guess.Base.......: File (/home/kali/VirtualShared/Wordlists/033_length04.txt)
+Status...........: Exhausted
+Guess.Base.......: File (/home/kali/VirtualShared/Wordlists/034_length05.txt)
+Status...........: Exhausted
+Guess.Base.......: File (/home/kali/VirtualShared/Wordlists/035_length06.txt)
+Status...........: Exhausted
+Guess.Base.......: File (/home/kali/VirtualShared/Wordlists/037_length07.txt)
+Status...........: Exhausted
+Guess.Base.......: File (/home/kali/VirtualShared/Wordlists/038_length08.txt)
+Status...........: Exhausted
+Guess.Base.......: File (/home/kali/VirtualShared/Wordlists/039_Unabr.txt)
+Status...........: Exhausted
+Guess.Base.......: File (/home/kali/VirtualShared/Wordlists/040_movie-characters.txt)
+Status...........: Exhausted
+Guess.Base.......: File (/home/kali/VirtualShared/Wordlists/041_DICT.TXT)
+Status...........: Running
+Guess.Base.......: File (/home/kali/VirtualShared/Wordlists/042_10million_upper_lower_case_num_1-9_special_chars.txt)
+Status...........: Exhausted
+Guess.Base.......: File (/home/kali/VirtualShared/Wordlists/042_10million_upper_lower_case_num_1-9_special_chars.txt)
+Status...........: Exhausted
+Guess.Base.......: File (/home/kali/VirtualShared/Wordlists/043_words.afrikaans.txt)
+Status...........: Exhausted
+Guess.Base.......: File (/home/kali/VirtualShared/Wordlists/044_words.croatian.txt)
+Status...........: Exhausted
+Guess.Base.......: File (/home/kali/VirtualShared/Wordlists/045_words.danish.txt)
+Status...........: Exhausted
+Guess.Base.......: File (/home/kali/VirtualShared/Wordlists/046_words.dutch.txt)
+Status...........: Exhausted
+Guess.Base.......: File (/home/kali/VirtualShared/Wordlists/047_words.english.txt)
+Status...........: Exhausted
+Guess.Base.......: File (/home/kali/VirtualShared/Wordlists/048_words.finnish.txt)
+Status...........: Exhausted
+Guess.Base.......: File (/home/kali/VirtualShared/Wordlists/049_words.german.txt)
+Status...........: Exhausted
+Guess.Base.......: File (/home/kali/VirtualShared/Wordlists/050_words.irish.txt)
+Status...........: Exhausted
+Guess.Base.......: File (/home/kali/VirtualShared/Wordlists/051_words.italian.txt)
+Status...........: Exhausted
+Guess.Base.......: File (/home/kali/VirtualShared/Wordlists/052_words.latin.txt)
+Status...........: Exhausted
+Guess.Base.......: File (/home/kali/VirtualShared/Wordlists/053_words.norwegian.txt)
+Status...........: Exhausted
+Guess.Base.......: File (/home/kali/VirtualShared/Wordlists/054_words.polish.txt)
+Status...........: Exhausted
+Guess.Base.......: File (/home/kali/VirtualShared/Wordlists/055_words.spanish.txt)
+Status...........: Exhausted
+Guess.Base.......: File (/home/kali/VirtualShared/Wordlists/056_words.swedish.txt)
+Status...........: Exhausted
+Guess.Base.......: File (/home/kali/VirtualShared/Wordlists/057_8dig5milup.txt)
+Status...........: Exhausted
+Guess.Base.......: File (/home/kali/VirtualShared/Wordlists/058_8dig5milup2.txt)
+Status...........: Exhausted
+Guess.Base.......: File (/home/kali/VirtualShared/Wordlists/059_8dig5milup3.txt)
+Status...........: Exhausted
+Guess.Base.......: File (/home/kali/VirtualShared/Wordlists/060_8dig5miluplow.txt)
+Status...........: Exhausted
+Guess.Base.......: File (/home/kali/VirtualShared/Wordlists/061_8dig5miluplow2.txt)
+Status...........: Exhausted
+Guess.Base.......: File (/home/kali/VirtualShared/Wordlists/062_8dig5miluplow3.txt)
+Status...........: Exhausted
+Guess.Base.......: File (/home/kali/VirtualShared/Wordlists/063_8dig10millow.txt)
+Status...........: Exhausted
+Guess.Base.......: File (/home/kali/VirtualShared/Wordlists/064_8dig10millow2.txt)
+Status...........: Exhausted
+Guess.Base.......: File (/home/kali/VirtualShared/Wordlists/065_8dig10milup.txt)
+Status...........: Exhausted
+Guess.Base.......: File (/home/kali/VirtualShared/Wordlists/066_8dig10milup2.txt)

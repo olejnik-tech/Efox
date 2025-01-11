@@ -1,0 +1,46 @@
+hashcat (v6.2.6) starting
+
+OpenCL API (OpenCL 3.0 PoCL 6.0+debian  Linux, None+Asserts, RELOC, LLVM 17.0.6, SLEEF, DISTRO, POCL_DEBUG) - Platform #1 [The pocl project]
+============================================================================================================================================
+* Device #1: cpu-haswell-AMD Ryzen 7 5700X 8-Core Processor, 6943/13951 MB (2048 MB allocatable), 4MCU
+
+Minimum password length supported by kernel: 8
+Maximum password length supported by kernel: 63
+
+Counting lines in /home/kali/VirtualShared/Targets/MATĚJKA_handshake/hash.hc22000. Please be patient...Counted lines in /home/kali/VirtualShared/Targets/MATĚJKA_handshake/hash.hc22000Parsed Hashes: 1/1 (100.00%)Parsed Hashes: 1/1 (100.00%)Sorting hashes. Please be patient...Sorted hashesRemoving duplicate hashes. Please be patient...Removed duplicate hashesSorting salts. Please be patient...Sorted saltsGenerating bitmap tables...Generated bitmap tablesHashes: 1 digests; 1 unique digests, 1 unique salts
+Bitmaps: 16 bits, 65536 entries, 0x0000ffff mask, 262144 bytes, 5/13 rotates
+Rules: 1
+
+Optimizers applied:
+* Zero-Byte
+* Single-Hash
+* Single-Salt
+* Slow-Hash-SIMD-LOOP
+
+Watchdog: Temperature abort trigger set to 90c
+
+Initializing device kernels and memory. Please be patient...Initializing backend runtime for device #1. Please be patient...Initialized backend runtime for device #1Host memory required for this attack: 1 MB
+
+Initialized device kernels and memoryStarting self-test. Please be patient...Finished self-testDictionary cache building /home/kali/VirtualShared/Wordlists/067_8dig10miluplow.txt: 33553440 bytes (33.55%)Dictionary cache built:
+* Filename..: /home/kali/VirtualShared/Wordlists/067_8dig10miluplow.txt
+* Passwords.: 10000000
+* Bytes.....: 100000000
+* Keyspace..: 10000000
+* Runtime...: 2 secs
+
+Starting autotune. Please be patient...Finished autotune                                                          [s]tatus [p]ause [b]ypass [c]heckpoint [f]inish [q]uit =>                                                           Cracking performance lower than expected?
+
+* Append -w 3 to the commandline.
+  This can cause your screen to lag.
+
+* Append -S to the commandline.
+  This has a drastic speed impact but can be better for specific attacks.
+  Typical scenarios are a small wordlist but a large ruleset.
+
+* Update your backend API runtime / driver the right way:
+  https://hashcat.net/faq/wrongdriver
+
+* Create more work items to make use of your parallelization power:
+  https://hashcat.net/faq/morework
+
+[s]tatus [p]ause [b]ypass [c]heckpoint [f]inish [q]uit => 

@@ -22,17 +22,21 @@ sudo hashcat -m 22000 hash rockyou.zip
 sudo hashcat -m 22000 ~/VirtualShared/Targets/Moninav_handshake/hash.hc22000 rockyou.zip
 ```
 ~/VirtualShared/Targets/Moninav_handshake/hash.hc22000
-
-
 sudo hashcat -m 22000 ~/VirtualShared/Targets/Moninav_handshake/hash.hc22000 rockyou.zip
+
+# Tuah
+- recommended to run like:
+```bash
+sudo python3 ./tuah.py | tee >(grep -E "Guess.Base...|Status..." > tuah_output.txt)
+```
+to get the output in a file to search in a result later by "status"
+
 # Disclaimer
 These scripts are for educational purposes only. I am not responsible of any of your actions you may do with the help of these scripts.
 
 
 # TODO
-dongle does not always work
-bad copy of mac address
-exception with adapter (probably when not recognized USB yet)
-SSID folder - couldn't see the wifi
-todo ssid filter
-naming of handshake/cracked
+- bad copy of mac address
+- SSID folder - couldn't see the wifi
+- todo ssid filter (as airodump-ng attribute?)
+- naming of handshake/cracked in tuah

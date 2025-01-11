@@ -47,8 +47,10 @@ def main(config_param):
                 start_monitoring_mode()
 
         elif user_input.lower() == 'craft':
-            if target.interface:
-                get_data()
+
+            if not target.interface:
+                get_interface(config_param)
+            if get_data():
                 print_data(config_param)
                 prepare_output_folder(config_param)
             else:
@@ -57,24 +59,32 @@ def main(config_param):
         elif user_input.lower() == 'start':
             if get_interface(config_param):
                 start_monitoring_mode()
-                get_data()
-                print_data(config_param)
-                prepare_output_folder(config_param)
+                if get_data():
+                    print_data(config_param)
+                    prepare_output_folder(config_param)
 
 def get_interface(config_param):
-    print(f'\nSearching for {config_param.get('ap_dongle')} ...')
-    airmon_output = subprocess.run(['sudo', 'airmon-ng'], capture_output=True, text=True)
-    result=airmon_output.stdout
-    lines=result.split('\n')
 
-    adapters_info=[line for line in lines if config_param.get('ap_dongle') in line]
+    count = 0
+    tries = 10
+    while True:
+        print(f'\nSearching for {config_param.get('ap_dongle')} ...')
+        airmon_output = subprocess.run(['sudo', 'airmon-ng'], capture_output=True, text=True)
+        result = airmon_output.stdout
+        lines = result.split('\n')
+        adapters_info = [line for line in lines if config_param.get('ap_dongle') in line]
 
-    if not adapters_info:
-        print(f'Error: not found dongle {config_param.get('ap_dongle')}\n# check dongle, drivers and VM settings\n')
-        return 0
-
-    target.interface = adapters_info[0].split()[1]
-    print(f'Success! Found interface: {target.interface}')
+        if not adapters_info:
+            count += 1
+            print(f'Error: not found dongle {config_param.get('ap_dongle')}\nretrying [{count}/{tries}] ...\n')
+            time.sleep(4)
+            if count >= tries:
+                print(f'Error: not found dongle {config_param.get('ap_dongle')}\n# check dongle, drivers and VM settings\n')
+                return 0
+        else:
+            target.interface = adapters_info[0].split()[1]
+            print(f'Success! Found interface: {target.interface}')
+            return 1
 
 def start_monitoring_mode():
     print(f'\nStarting monitoring mode ...')
@@ -92,20 +102,25 @@ def start_monitoring_mode():
 def get_data():
 
     print(f'\nhawk$ sudo airodump-ng {target.interface}')
+    print('# copy the line of the selected target\n# filter with \'a\' key for \'sta only\' to see paired devices\n# type \'fail\' if the device has problem, reinsert, and try again\n')
     subprocess.run(['qterminal', '-e', f'bash -c "sudo airodump-ng {target.interface}; exec bash"'])
-    print('# copy the line of the selected target\n# filter with \'a\' key for \'sta only\' to see paired devices\n')
 
     user_input=input()
+
+    if user_input=='fail':
+        return 0
+
     macs=user_input.split()
     target.router_mac=macs[0]
     target.device_mac=macs[1]
 
     print(f'\nhawk$ : sudo airodump-ng {target.interface} --bssid {target.router_mac}')
-    subprocess.run(['qterminal', '-e', f'bash -c "sudo airodump-ng {target.interface} --bssid {target.router_mac}; exec bash"'])
     print('# copy first line to get router details\n')
+    subprocess.run(['qterminal', '-e', f'bash -c "sudo airodump-ng {target.interface} --bssid {target.router_mac}; exec bash"'])
     user_input=input()
     target.router_ssid=user_input.split()[10]
     target.channel=user_input.split()[5]
+    return 1
 
 def prepare_output_folder(config_param):
     folder=config_param.get('cap_dir')+f'/{target.router_ssid}'

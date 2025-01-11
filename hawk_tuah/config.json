@@ -1,5 +1,5 @@
 {
   "ap_dongle": "TP-Link",
   "cap_dir": "/home/kali/VirtualShared/Targets",
-  "wordlists_dir": "/home/kali/VirtualShared/Wordlists/new/WordlistCollection"
+  "wordlists_dir": "/home/kali/VirtualShared/Wordlists"
 }
